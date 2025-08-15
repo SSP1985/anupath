@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "text": "Write a SQL query to select all columns from a table named 'employees'.",
+      "correctAnswer": "SELECT * FROM employees;"
+    },
+    {
+      "id": 2,
+      "text": "Write a SQL query to select only the 'first_name' and 'last_name' from the 'customers' table.",
+      "correctAnswer": "SELECT first_name, last_name FROM customers;"
+    },
+    {
+      "id": 3,
+      "text": "Write a SQL query to select all employees where the 'department' is 'Sales'.",
+      "correctAnswer": "SELECT * FROM employees WHERE department = 'Sales';"
+    },
+    {
+      "id": 4,
+      "text": "Write a SQL query to count the number of employees.",
+      "correctAnswer": "SELECT COUNT(*) FROM employees;"
+    }
+]
