@@ -99,7 +99,27 @@
                 <p id="results-placeholder" class="text-gray-500 dark:text-gray-400">Your query results will appear here after you run a query.</p>
             </div>
         </section>
-    </main>
+
+        <p id="results-placeholder" class="text-gray-500 dark:text-gray-400">
+    Your query results will appear here after you run a query.
+</p>
+</div>
+</section>
+
+<!-- Essentials Section -->
+<section id="essentials" class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 space-y-4">
+  <h2 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">5 Essential SQL Commands for Beginners</h2>
+  <ol class="list-decimal pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+    <li><strong>SELECT</strong> — fetch columns/rows<br><code>SELECT name, salary FROM employees;</code></li>
+    <li><strong>WHERE</strong> — filter rows<br><code>SELECT * FROM employees WHERE department = 'Engineering';</code></li>
+    <li><strong>ORDER BY</strong> — sort results<br><code>SELECT name, salary FROM employees ORDER BY salary DESC;</code></li>
+    <li><strong>GROUP BY</strong> — aggregate<br><code>SELECT department, COUNT(*) AS headcount FROM employees GROUP BY department;</code></li>
+    <li><strong>JOIN</strong> — combine tables<br><code>SELECT e.name, d.name AS dept FROM employees e JOIN departments d ON e.department = d.name;</code></li>
+  </ol>
+  <p class="text-sm text-gray-500 dark:text-gray-400">Tip: Press Shift + Enter to run the query from the editor.</p>
+</section>
+
+</main>
 
     <!-- Footer Section -->
     <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
@@ -195,3 +215,4 @@
     </script>
 </body>
 </html>
+
