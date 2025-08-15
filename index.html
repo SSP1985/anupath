@@ -1,344 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anupath - Learn Programming, AI Tools & No-Code Development</title>
-    <meta name="description" content="Master programming with interactive SQL courses, discover the best AI tools (free & premium), and learn no-code development. Your complete guide to modern technology skills and AI-powered productivity.">
-    <meta name="keywords" content="SQL course, AI tools, programming tutorial, no-code development, artificial intelligence, database training, coding bootcamp, tech education, AI directory, developer tools">
-    <meta name="author" content="Anupath">
-    <link rel="canonical" href="https://anupath.com">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anupath - Interactive SQL Training</title>
+  <meta name="description" content="An interactive, hands-on course to master SQL for data analysis and database management." />
+  <meta name="keywords" content="SQL course, SQL tutorial, interactive SQL, database training, SQL practice, coding bootcamp" />
+  <meta name="author" content="Anupath" />
+  <!-- Use your live GitHub Pages URL with hyphenated file name -->
+  <link rel="canonical" href="https://ssp1985.github.io/anupath/sql-training.html" />
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "Anupath",
-        "description": "An online platform offering interactive programming courses and a directory of AI tools.",
-        "url": "https://anupath.com",
-        "logo": "https://anupath.com/logo.png",
-        "sameAs": [
-            "https://twitter.com/anupath",
-            "https://linkedin.com/company/anupath"
-        ]
-    }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        [data-theme="dark"] {
-            background-color: #1a202c;
-            color: #e2e8f0;
-        }
-        [data-theme="dark"] .bg-white {
-            background-color: #2d3748;
-        }
-        [data-theme="dark"] .text-gray-900 {
-            color: #e2e8f0;
-        }
-        [data-theme="dark"] .border-gray-200 {
-            border-color: #4a5568;
-        }
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-    </style>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; transition: background-color .3s, color .3s; }
+    [data-theme="dark"] { background-color: #1a202c; color: #e2e8f0; }
+    [data-theme="dark"] .bg-white { background-color: #2d3748; }
+    [data-theme="dark"] .text-gray-900 { color: #e2e8f0; }
+    [data-theme="dark"] .border-gray-200 { border-color: #4a5568; }
+    /* Code block tweak for click-to-run look */
+    code { cursor: pointer; }
+    code.kbd { cursor: default; }
+    /* Editor scrollbar */
+    textarea::-webkit-scrollbar { width: 8px; }
+    textarea::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 4px; }
+    [data-theme="dark"] textarea::-webkit-scrollbar-track { background: #4a5568; }
+    textarea::-webkit-scrollbar-thumb { background: #a0aec0; border-radius: 4px; }
+    [data-theme="dark"] textarea::-webkit-scrollbar-thumb { background: #718096; }
+  </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-50">
 
-    <header class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Anupath</a>
-            <div class="mt-4 sm:mt-0 flex space-x-4">
-                <a href="#courses" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Courses</a>
-                <a href="#aitools" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">AI Tools</a>
-                <a href="#articles" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Articles</a>
-                <a href="#chat" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Chat</a>
-                <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                    <span id="themeIcon">☀️</span>
-                </button>
-            </div>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
+      <a href="/anupath/" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Anupath</a>
+      <div class="mt-4 sm:mt-0 flex items-center space-x-4">
+        <a href="/anupath/" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Back to Home</a>
+        <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-12">
+  <!-- Main -->
+  <main class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-12">
+    <!-- Intro -->
+    <section class="text-center py-12">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">Interactive SQL for Beginners</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Use the interactive editor below to run SQL queries and see results instantly.</p>
+    </section>
 
-        <section class="text-center py-16 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl shadow-lg">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">Your Path to Modern Tech Skills</h1>
-            <p class="text-lg sm:text-xl font-light max-w-2xl mx-auto">Master programming with interactive courses, explore the latest AI tools, and learn the art of no-code development.</p>
-            <div class="mt-8 flex justify-center space-x-4">
-                <a href="#courses" class="bg-white text-indigo-600 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">Start Learning</a>
-                <a href="#aitools" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-indigo-600 transition duration-300">Discover AI Tools</a>
-            </div>
-        </section>
+    <section class="flex flex-col lg:flex-row gap-8">
+      <!-- Lesson -->
+      <div class="lg:w-1/3 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 space-y-4">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-50">Lesson 1: The SELECT Statement</h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          The <code class="kbd">SELECT</code> statement fetches data from a table. To select all columns, use the <code class="kbd">*</code> wildcard.
+          Try this query (click to auto-fill):
+        </p>
+        <code
+          class="block bg-gray-100 dark:bg-gray-800 text-purple-600 dark:text-purple-400 p-3 rounded-lg font-mono"
+          data-query="SELECT * FROM employees;"
+          title="Click to run this query"
+        >SELECT * FROM employees;</code>
+        <p class="text-gray-600 dark:text-gray-300">
+          It will return all rows from the <code class="kbd">employees</code> table.
+        </p>
+      </div>
 
-        <section id="courses" class="py-12">
-            <h2 class="text-3xl font-bold text-center mb-8">Interactive Courses</h2>
-            <div id="courses-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-        </section>
-
-        <section id="aitools" class="py-12">
-            <h2 class="text-3xl font-bold text-center mb-8">AI Tools Directory</h2>
-            <div class="flex justify-center space-x-2 mb-6">
-                <button data-filter="featured" class="filter-tab px-4 py-2 rounded-full bg-indigo-500 text-white font-semibold hover:bg-indigo-600 transition duration-300">Featured</button>
-                <button data-filter="free" class="filter-tab px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">Free Tools</button>
-                <button data-filter="premium" class="filter-tab px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">Premium Tools</button>
-            </div>
-            <div id="aitools-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-        </section>
-
-        <section id="articles" class="py-12">
-            <h2 class="text-3xl font-bold text-center mb-8">Latest Articles</h2>
-            <div id="articles-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-        </section>
-
-        <section id="chat" class="py-12">
-            <h2 class="text-3xl font-bold text-center mb-8">Talk to Anupath AI</h2>
-            <div class="max-w-xl mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col space-y-4">
-                <div id="chatbox" class="h-64 overflow-y-auto p-4 border rounded-lg bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                    <p class="text-gray-500 dark:text-gray-400">Ask me anything about programming, AI, or no-code development!</p>
-                </div>
-                <div class="flex space-x-2">
-                    <input type="text" id="questionInput" placeholder="Type your question here..." class="flex-grow p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                    <button id="sendChatButton" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Send</button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; <span id="currentYear"></span> Anupath. All rights reserved.</p>
-            <p class="mt-2">Stay up-to-date with the latest in AI and tech education.</p>
+      <!-- Editor -->
+      <div class="lg:w-2/3 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-4">SQL Editor</h3>
+        <textarea id="sqlEditor" class="flex-grow bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 p-4 rounded-lg font-mono text-sm leading-relaxed resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500" rows="10" placeholder="Type your SQL query here..."></textarea>
+        <div class="flex justify-end mt-4">
+          <button id="runQueryButton" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Run Query</button>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <button id="scrollToTopBtn" class="scroll-to-top bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-    </button>
+    <!-- Results -->
+    <section class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6">
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-4">Query Results</h3>
+      <div id="results" class="overflow-x-auto">
+        <p class="text-gray-500 dark:text-gray-400">Your query results will appear here after you run a query.</p>
+      </div>
+    </section>
 
-    <script>
-        // Data URLs for external JSON files
-        // Replace these with the actual URLs of your hosted JSON files
-        const coursesDataUrl = 'courses.json';
-        const aiToolsDataUrl = 'aitools.json';
-        const articlesDataUrl = 'articles.json';
+    <!-- Essentials (Anchor target for homepage article) -->
+    <section id="essentials" class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 space-y-4">
+      <h2 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">5 Essential SQL Commands for Beginners</h2>
+      <ol class="list-decimal pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+        <li>
+          <strong>SELECT</strong> — fetch columns/rows<br>
+          <code data-query="SELECT name, salary FROM employees;">SELECT name, salary FROM employees;</code>
+        </li>
+        <li>
+          <strong>WHERE</strong> — filter rows<br>
+          <code data-query="SELECT * FROM employees WHERE department = 'Engineering';">SELECT * FROM employees WHERE department = 'Engineering';</code>
+        </li>
+        <li>
+          <strong>ORDER BY</strong> — sort results<br>
+          <code data-query="SELECT name, salary FROM employees ORDER BY salary DESC;">SELECT name, salary FROM employees ORDER BY salary DESC;</code>
+        </li>
+        <li>
+          <strong>GROUP BY</strong> — aggregate<br>
+          <code data-query="SELECT department, COUNT(*) AS headcount FROM employees GROUP BY department;">SELECT department, COUNT(*) AS headcount FROM employees GROUP BY department;</code>
+        </li>
+        <li>
+          <strong>JOIN</strong> — combine tables<br>
+          <code data-query="SELECT e.name, d.name AS dept FROM employees e JOIN departments d ON e.department = d.name;">SELECT e.name, d.name AS dept FROM employees e JOIN departments d ON e.department = d.name;</code>
+        </li>
+      </ol>
+      <p class="text-sm text-gray-500 dark:text-gray-400">Tip: Press <kbd>Shift</kbd> + <kbd>Enter</kbd> to run the query from the editor.</p>
+    </section>
+  </main>
 
-        // --- MOCK DATA FOR DEMONSTRATION ---
-        // In a real scenario, you would replace this with fetch() calls to your JSON files.
-        const mockCoursesData = [
-            { id: 1, title: 'Interactive SQL for Beginners', description: 'Master SQL fundamentals with hands-on, in-browser exercises.', image: 'https://placehold.co/400x250/E0E7FF/4338CA?text=SQL+Course', link: 'sql_training.html', tag: 'SQL' },
-            { id: 2, title: 'No-Code Development with Webflow', description: 'Build beautiful, responsive websites without writing a single line of code.', image: 'https://placehold.co/400x250/F0F9FF/0E7490?text=Webflow+Course', link: '#', tag: 'No-Code' },
-            { id: 3, title: 'Introduction to Prompt Engineering', description: 'Learn to craft effective prompts to get the best results from large language models.', image: 'https://placehold.co/400x250/E0F2FE/0C4A6E?text=Prompt+Engineering', link: '#', tag: 'AI' }
-        ];
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; <span id="currentYear"></span> Anupath. All rights reserved.</p>
+    </div>
+  </footer>
 
-        const mockAIToolsData = [
-            { id: 1, title: 'Gemini', description: 'A powerful AI model for text, images, and code.', image: 'https://placehold.co/400x250/F3E8FF/5B21B6?text=Gemini', link: '#', type: 'text', featured: true },
-            { id: 2, title: 'DALL-E', description: 'Generate high-quality images from text descriptions.', image: 'https://placehold.co/400x250/FEE2E2/B91C1C?text=DALL-E', link: '#', type: 'image', featured: false },
-            { id: 3, title: 'Midjourney', description: 'An independent research lab that explores new mediums of thought and expands the human imagination.', image: 'https://placehold.co/400x250/FEF2F2/F97316?text=Midjourney', link: '#', type: 'image', featured: false },
-            { id: 4, title: 'ChatGPT', description: 'An AI-powered chatbot that can answer questions, write stories, and more.', image: 'https://placehold.co/400x250/ECFDF5/059669?text=ChatGPT', link: '#', type: 'text', featured: true },
-        ];
+  <script>
+    // --- Mock DB ---
+    const mockDatabase = {
+      employees: [
+        { id: 1, name: 'Alice',   department: 'Engineering', salary: 75000 },
+        { id: 2, name: 'Bob',     department: 'Marketing',   salary: 65000 },
+        { id: 3, name: 'Charlie', department: 'Engineering', salary: 80000 },
+        { id: 4, name: 'Diana',   department: 'Sales',       salary: 70000 },
+      ]
+    };
 
-        const mockArticlesData = [
-            { id: 1, title: 'The Future of No-Code Development', description: 'Explore how no-code platforms are empowering a new generation of creators.', image: 'https://placehold.co/400x250/D1D5DB/1F2937?text=No-Code+Article', link: '#', date: '2023-10-27' },
-            { id: 2, title: 'AI in the Modern Developer\'s Workflow', description: 'How AI tools are changing the way we write, debug, and deploy software.', image: 'https://placehold.co/400x250/D1FAE5/065F46?text=AI+Article', link: '#', date: '2023-10-25' },
-            { id: 3, title: '5 Essential SQL Commands for Data Analysts', description: 'A quick guide to the most important SQL queries for anyone working with data.', image: 'https://placehold.co/400x250/DBEAFE/1E40AF?text=SQL+Article', link: '#', date: '2023-10-20' },
-        ];
-        
-        let allAIToolsData = mockAIToolsData; // Store all AI tools for filtering
+    // --- Theme ---
+    function initializeTheme() {
+      const currentTheme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      document.documentElement.classList.add(currentTheme === 'dark' ? 'dark' : 'light');
+      document.getElementById('themeIcon').textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+    }
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const next = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      document.documentElement.classList.remove(currentTheme);
+      document.documentElement.classList.add(next);
+      localStorage.setItem('theme', next);
+      document.getElementById('themeIcon').textContent = next === 'dark' ? '☀️' : '🌙';
+    }
 
-        // --- THEME MANAGEMENT ---
-        function initializeTheme() {
-            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            document.documentElement.classList.add(currentTheme === 'dark' ? 'dark' : 'light');
-            document.getElementById('themeIcon').textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+    // --- Query runner ---
+    function renderTable(rows) {
+      if (!rows.length) return '<p class="text-gray-500 dark:text-gray-400">No rows returned.</p>';
+      const cols = Object.keys(rows[0]);
+      const thead = cols.map(c => `<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">${c}</th>`).join('');
+      const tbody = rows.map(r => `
+        <tr>
+          ${cols.map(c => `<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">${String(r[c])}</td>`).join('')}
+        </tr>
+      `).join('');
+      return `
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 rounded-lg">
+          <thead class="bg-gray-100 dark:bg-gray-800"><tr>${thead}</tr></thead>
+          <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">${tbody}</tbody>
+        </table>
+      `;
+    }
+
+    function runQuery() {
+      const editor = document.getElementById('sqlEditor');
+      const resultsDiv = document.getElementById('results');
+      const q = (editor.value || '').trim().toLowerCase();
+
+      resultsDiv.innerHTML = '';
+
+      if (!q) {
+        resultsDiv.innerHTML = `<p class="text-red-500">Error: Please enter a SQL query.</p>`;
+        return;
+      }
+
+      // Very simple simulation (demo)
+      if (q.includes('select * from employees')) {
+        resultsDiv.innerHTML = renderTable(mockDatabase.employees);
+      } else if (q.includes('select name, salary from employees')) {
+        let rows = mockDatabase.employees.map(({name, salary}) => ({name, salary}));
+        if (q.includes('order by salary desc')) {
+          rows = rows.sort((a,b) => b.salary - a.salary);
         }
+        resultsDiv.innerHTML = renderTable(rows);
+      } else if (q.includes("where department = 'engineering'")) {
+        const rows = mockDatabase.employees.filter(e => e.department.toLowerCase() === 'engineering');
+        resultsDiv.innerHTML = renderTable(rows);
+      } else if (q.includes('group by department')) {
+        const counts = {};
+        for (const e of mockDatabase.employees) counts[e.department] = (counts[e.department] || 0) + 1;
+        const rows = Object.entries(counts).map(([department, headcount]) => ({department, headcount}));
+        resultsDiv.innerHTML = renderTable(rows);
+      } else if (q.includes('join')) {
+        // Minimal join demo with a mock departments table:
+        const departments = [{ name:'Engineering' }, { name:'Marketing' }, { name:'Sales' }];
+        const rows = mockDatabase.employees
+          .map(e => ({ name: e.name, dept: e.department }))
+          .filter(r => departments.some(d => d.name.toLowerCase() === r.dept.toLowerCase()));
+        resultsDiv.innerHTML = renderTable(rows);
+      } else if (q.startsWith('select')) {
+        resultsDiv.innerHTML = `<p class="text-red-500">Error: This demo supports a few example queries only. Try one from the “Essentials” section above.</p>`;
+      } else {
+        resultsDiv.innerHTML = `<p class="text-red-500">Error: Not a SQL SELECT query.</p>`;
+      }
+    }
 
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            document.documentElement.classList.remove(currentTheme);
-            document.documentElement.classList.add(newTheme);
-            localStorage.setItem('theme', newTheme);
-            document.getElementById('themeIcon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    function setQueryAndRun(query) {
+      const editor = document.getElementById('sqlEditor');
+      editor.value = query;
+      runQuery();
+      // Scroll results into view on small screens
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // --- Init ---
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeTheme();
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // Prefill with a working query
+      document.getElementById('sqlEditor').value = 'SELECT * FROM employees;';
+
+      // Theme toggle
+      document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+      // Run button
+      document.getElementById('runQueryButton').addEventListener('click', runQuery);
+
+      // Shift+Enter to run
+      document.getElementById('sqlEditor').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && e.shiftKey) {
+          e.preventDefault();
+          runQuery();
         }
+      });
 
-        // --- CONTENT RENDERING FUNCTIONS ---
-        function renderCourses(courses) {
-            const container = document.getElementById('courses-container');
-            container.innerHTML = courses.map(course => `
-                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <img src="${course.image}" alt="${course.title}" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-400">${course.tag}</span>
-                        <h3 class="text-xl font-semibold mt-2">${course.title}</h3>
-                        <p class="text-gray-500 dark:text-gray-400 mt-2">${course.description}</p>
-                        <a href="${course.link}" class="inline-block mt-4 text-indigo-600 dark:text-indigo-400 font-medium hover:underline">Start Course &rarr;</a>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderAITools(tools) {
-            const container = document.getElementById('aitools-container');
-            container.innerHTML = tools.map(tool => `
-                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <img src="${tool.image}" alt="${tool.title}" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-xs font-semibold uppercase tracking-wide text-purple-600 dark:text-purple-400">${tool.type}</span>
-                        <h3 class="text-xl font-semibold mt-2">${tool.title}</h3>
-                        <p class="text-gray-500 dark:text-gray-400 mt-2">${tool.description}</p>
-                        <a href="${tool.link}" class="inline-block mt-4 text-purple-600 dark:text-purple-400 font-medium hover:underline">Learn More &rarr;</a>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderArticles(articles) {
-            const container = document.getElementById('articles-container');
-            container.innerHTML = articles.map(article => `
-                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">${article.date}</p>
-                        <h3 class="text-xl font-semibold mt-2">${article.title}</h3>
-                        <p class="text-gray-500 dark:text-gray-400 mt-2">${article.description}</p>
-                        <a href="${article.link}" class="inline-block mt-4 text-gray-600 dark:text-gray-300 font-medium hover:underline">Read Article &rarr;</a>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // --- FETCH & LOAD CONTENT ---
-        async function loadContent() {
-            try {
-                // In a real-world scenario, uncomment the lines below to fetch data from your JSON files
-                // const courses = await fetch(coursesDataUrl).then(res => res.json());
-                // const aiTools = await fetch(aiToolsDataUrl).then(res => res.json());
-                // const articles = await fetch(articlesDataUrl).then(res => res.json());
-                
-                // For this example, we'll use mock data
-                const courses = mockCoursesData;
-                allAIToolsData = mockAIToolsData; // Store all tools for filtering
-                const articles = mockArticlesData;
-
-                renderCourses(courses);
-                renderAITools(allAIToolsData.filter(tool => tool.featured)); // Render featured tools initially
-                renderArticles(articles);
-            } catch (error) {
-                console.error('Failed to load content:', error);
-                // Fallback for users, can display a message
-                const fallbackMessage = '<p class="text-center text-red-500 col-span-3">Could not load content. Please check back for the latest updates.</p>';
-                document.getElementById('courses-container').innerHTML = fallbackMessage;
-                document.getElementById('aitools-container').innerHTML = fallbackMessage;
-                document.getElementById('articles-container').innerHTML = fallbackMessage;
-            }
-        }
-
-        // --- CHAT FUNCTIONALITY ---
-        function askQuestion() {
-            const input = document.getElementById('questionInput');
-            const chatbox = document.getElementById('chatbox');
-            const userQuestion = input.value.trim();
-
-            if (userQuestion) {
-                // Append user message to chatbox
-                chatbox.innerHTML += `<p class="text-indigo-600 dark:text-indigo-400 font-semibold">You: ${userQuestion}</p>`;
-                
-                // Placeholder for AI response
-                // This is where you would integrate the Gemini API
-                // For now, we'll simulate a simple bot response
-                setTimeout(() => {
-                    chatbox.innerHTML += `<p class="text-gray-700 dark:text-gray-300">Anupath AI: Thank you for your question! We are currently working on our interactive chat feature. Stay tuned!</p>`;
-                    chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll to the latest message
-                }, 1000);
-                
-                input.value = '';
-            }
-        }
-
-        // --- FILTERING AI TOOLS ---
-        function filterTools(filterType) {
-            const tabs = document.querySelectorAll('.filter-tab');
-            tabs.forEach(tab => {
-                tab.classList.remove('bg-indigo-500', 'text-white');
-                tab.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-800', 'dark:text-gray-200');
-            });
-
-            const activeTab = document.querySelector(`[data-filter="${filterType}"]`);
-            activeTab.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-800', 'dark:text-gray-200');
-            activeTab.classList.add('bg-indigo-500', 'text-white');
-
-            let filteredTools = [];
-            if (filterType === 'featured') {
-                filteredTools = allAIToolsData.filter(tool => tool.featured);
-            } else if (filterType === 'free') {
-                // Assuming a 'free' property. For this example, let's just filter by a mock property
-                filteredTools = allAIToolsData.filter(tool => tool.link.includes('free')); // A simple mock filter
-            } else if (filterType === 'premium') {
-                filteredTools = allAIToolsData.filter(tool => !tool.link.includes('free')); // A simple mock filter
-            }
-            renderAITools(filteredTools);
-        }
-
-        // --- SCROLL TO TOP FUNCTIONALITY ---
-        window.onscroll = function() {
-            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                scrollToTopBtn.classList.remove('hidden');
-            } else {
-                scrollToTopBtn.classList.add('hidden');
-            }
-        };
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // --- INITIALIZATION ---
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeTheme();
-            loadContent();
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
-            
-            // Event listeners
-            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-            document.getElementById('sendChatButton').addEventListener('click', askQuestion);
-            document.getElementById('questionInput').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    askQuestion();
-                }
-            });
-            document.getElementById('scrollToTopBtn').addEventListener('click', scrollToTop);
-            
-            // Filter tabs event listeners
-            document.querySelectorAll('.filter-tab').forEach(tab => {
-                tab.addEventListener('click', function() {
-                    filterTools(this.dataset.filter);
-                });
-            });
-
-            // Set the initial active filter tab
-            document.querySelector('[data-filter="featured"]').click();
-        });
-    </script>
+      // Click-to-run examples (both in the lesson and in #essentials)
+      document.querySelectorAll('code[data-query]').forEach(code => {
+        code.addEventListener('click', () => setQueryAndRun(code.dataset.query));
+        code.setAttribute('title', 'Click to run this query');
+      });
+    });
+  </script>
 </body>
 </html>
