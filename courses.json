@@ -1,23 +1,14 @@
 [
-    {
-      "id": 1,
-      "title": "Interactive SQL Training",
-      "description": "Master database querying with hands-on practice, from basic SELECT statements to complex JOINS and subqueries.",
-      "level": "Beginner",
-      "lessons": 15
-    },
-    {
-      "id": 2,
-      "title": "Python for Data Science",
-      "description": "A foundational course covering Python basics, pandas, numpy, and data visualization for aspiring data scientists.",
-      "level": "Intermediate",
-      "lessons": 20
-    },
-    {
-      "id": 3,
-      "title": "The No-Code Development Playbook",
-      "description": "Learn to build functional websites and applications using tools like Bubble and Webflow without writing any code.",
-      "level": "Beginner",
-      "lessons": 10
-    }
+  {
+    "title": "Interactive SQL Training",
+    "description": "Hands-on SQL practice with examples, exercises, and a live code runner.",
+    "level": "Beginner",
+    "lessons": 24
+  },
+  {
+    "title": "Python for Data Science",
+    "description": "Foundations of Python for analysis, NumPy, and pandas. (Coming soon)",
+    "level": "Beginner",
+    "lessons": 30
+  }
 ]
