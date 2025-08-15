@@ -1,26 +1,9 @@
 [
-    {
-      "id": 1,
-      "title": "5 Essential SQL Commands for Beginners",
-      "excerpt": "A deep dive into the five fundamental SQL commands you need to know to start querying databases like a pro.",
-      "date": "August 15, 2025",
-      "readTime": "5 min read",
-      "link": "#"
-    },
-    {
-      "id": 2,
-      "title": "Choosing the Right AI Tool for Your Workflow",
-      "excerpt": "With hundreds of AI tools available, we break down how to choose the best ones for your specific needs, whether for work or creativity.",
-      "date": "August 12, 2025",
-      "readTime": "8 min read",
-      "link": "#"
-    },
-    {
-      "id": 3,
-      "title": "Introduction to No-Code Automation",
-      "excerpt": "Learn how to automate tedious tasks and connect your apps without a single line of code using tools like Zapier and IFTTT.",
-      "date": "August 10, 2025",
-      "readTime": "6 min read",
-      "link": "#"
-    }
+  {
+    "title": "5 Essential SQL Commands for Beginners",
+    "excerpt": "Master SELECT, WHERE, ORDER BY, GROUP BY, and JOIN with quick examples.",
+    "date": "Aug 15, 2025",
+    "readTime": "7 min",
+    "link": "sql-training.html#essentials"
+  }
 ]
