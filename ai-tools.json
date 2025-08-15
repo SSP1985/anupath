@@ -1,66 +1,16 @@
 [
-    {
-      "id": 1,
-      "name": "Midjourney",
-      "description": "An independent research lab that explores new mediums of thought and expands the imaginative powers of the human species.",
-      "link": "https://www.midjourney.com",
-      "pricing": "paid",
-      "categories": ["creative", "image generation"]
-    },
-    {
-      "id": 2,
-      "name": "ChatGPT",
-      "description": "A conversational AI model that can answer questions, write essays, and engage in creative text generation.",
-      "link": "https://chat.openai.com",
-      "pricing": "freemium",
-      "categories": ["productivity", "development", "writing"]
-    },
-    {
-      "id": 3,
-      "name": "Stable Diffusion",
-      "description": "A powerful open-source text-to-image model that allows users to create stunning visuals from text prompts.",
-      "link": "https://stability.ai/stable-diffusion",
-      "pricing": "free",
-      "categories": ["creative", "image generation"]
-    },
-    {
-      "id": 4,
-      "name": "GitHub Copilot",
-      "description": "An AI pair programmer that helps you write code faster by suggesting lines and entire functions.",
-      "link": "https://github.com/features/copilot",
-      "pricing": "paid",
-      "categories": ["development", "productivity"]
-    },
-    {
-      "id": 5,
-      "name": "Bard",
-      "description": "A conversational AI from Google that helps you with creative brainstorming, coding, and general knowledge.",
-      "link": "https://bard.google.com",
-      "pricing": "free",
-      "categories": ["productivity", "writing", "development"]
-    },
-    {
-      "id": 6,
-      "name": "DALL-E 2",
-      "description": "An AI system that can create realistic images and art from a description in natural language.",
-      "link": "https://openai.com/dall-e-2/",
-      "pricing": "freemium",
-      "categories": ["creative", "image generation"]
-    },
-    {
-      "id": 7,
-      "name": "Hugging Face",
-      "description": "The AI community building the future. A platform for sharing models, datasets, and applications.",
-      "link": "https://huggingface.co",
-      "pricing": "freemium",
-      "categories": ["development", "community"]
-    },
-    {
-      "id": 8,
-      "name": "RunwayML",
-      "description": "A creative AI platform for artists and filmmakers to create new types of media using machine learning.",
-      "link": "https://runwayml.com",
-      "pricing": "freemium",
-      "categories": ["creative", "video generation"]
-    }
+  {
+    "name": "AI Text Summarizer",
+    "description": "Condense long articles and docs into key bullet points.",
+    "pricing": "free",
+    "categories": ["productivity", "text"],
+    "link": "https://example.com/summarizer"
+  },
+  {
+    "name": "AI Image Generator",
+    "description": "Generate images from text prompts.",
+    "pricing": "paid",
+    "categories": ["creative"],
+    "link": "https://example.com/image-gen"
+  }
 ]
