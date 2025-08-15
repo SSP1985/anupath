@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anupath - Interactive SQL Training</title>
+    <meta name="description" content="An interactive, hands-on course to master SQL for data analysis and database management.">
+    <meta name="keywords" content="SQL course, SQL tutorial, interactive SQL, database training, SQL practice, coding bootcamp">
+    <meta name="author" content="Anupath">
+    <link rel="canonical" href="https://anupath.com/sql_training.html">
+
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        [data-theme="dark"] {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        [data-theme="dark"] .bg-white {
+            background-color: #2d3748;
+        }
+        [data-theme="dark"] .text-gray-900 {
+            color: #e2e8f0;
+        }
+        [data-theme="dark"] .border-gray-200 {
+            border-color: #4a5568;
+        }
+        /* Custom scrollbar for the code editor */
+        textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 4px;
+        }
+        [data-theme="dark"] textarea::-webkit-scrollbar-track {
+            background: #4a5568;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background: #a0aec0;
+            border-radius: 4px;
+        }
+        [data-theme="dark"] textarea::-webkit-scrollbar-thumb {
+            background: #718096;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-50">
+
+    <!-- Header Section -->
+    <header class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Anupath</a>
+            <div class="mt-4 sm:mt-0 flex space-x-4">
+                <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Back to Home</a>
+                <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    <span id="themeIcon">☀️</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-12">
+        <section class="text-center py-12">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">Interactive SQL for Beginners</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Welcome to your first lesson! Use the interactive editor below to run SQL queries and see the results instantly.</p>
+        </section>
+
+        <section class="flex flex-col lg:flex-row gap-8">
+            <!-- Lesson and Instructions -->
+            <div class="lg:w-1/3 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 space-y-4">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-50">Lesson 1: The SELECT Statement</h3>
+                <p class="text-gray-600 dark:text-gray-300">The `SELECT` statement is used to fetch data from a database. To select all columns from a table, you use the `*` wildcard. Try typing the following query in the editor and clicking "Run Query":</p>
+                <code class="block bg-gray-100 dark:bg-gray-800 text-purple-600 dark:text-purple-400 p-3 rounded-lg font-mono">SELECT * FROM employees;</code>
+                <p class="text-gray-600 dark:text-gray-300">This will return all data from the `employees` table. Go ahead and give it a try!</p>
+            </div>
+
+            <!-- Interactive Editor -->
+            <div class="lg:w-2/3 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-4">SQL Editor</h3>
+                <textarea id="sqlEditor" class="flex-grow bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 p-4 rounded-lg font-mono text-sm leading-relaxed resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Type your SQL query here..."></textarea>
+                <div class="flex justify-end mt-4">
+                    <button id="runQueryButton" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Run Query</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Query Results Section -->
+        <section class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-4">Query Results</h3>
+            <div id="results" class="overflow-x-auto">
+                <!-- Query results will be displayed here -->
+                <p id="results-placeholder" class="text-gray-500 dark:text-gray-400">Your query results will appear here after you run a query.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; <span id="currentYear"></span> Anupath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- MOCK DATABASE FOR DEMONSTRATION ---
+        const mockDatabase = {
+            employees: [
+                { id: 1, name: 'Alice', department: 'Engineering', salary: 75000 },
+                { id: 2, name: 'Bob', department: 'Marketing', salary: 65000 },
+                { id: 3, name: 'Charlie', department: 'Engineering', salary: 80000 },
+                { id: 4, name: 'Diana', department: 'Sales', salary: 70000 },
+            ]
+        };
+
+        // --- THEME MANAGEMENT ---
+        function initializeTheme() {
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            document.documentElement.classList.add(currentTheme === 'dark' ? 'dark' : 'light');
+            document.getElementById('themeIcon').textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            document.documentElement.classList.remove(currentTheme);
+            document.documentElement.classList.add(newTheme);
+            localStorage.setItem('theme', newTheme);
+            document.getElementById('themeIcon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // --- SQL SIMULATION FUNCTION ---
+        function runQuery() {
+            const editor = document.getElementById('sqlEditor');
+            const resultsDiv = document.getElementById('results');
+            const query = editor.value.trim().toLowerCase();
+
+            resultsDiv.innerHTML = '';
+            
+            // Basic query parsing and simulation
+            if (query.includes('select * from employees')) {
+                const tableHtml = `
+                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 rounded-lg">
+                        <thead class="bg-gray-100 dark:bg-gray-800">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">ID</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Name</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Department</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Salary</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
+                            ${mockDatabase.employees.map(emp => `
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-50">${emp.id}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">${emp.name}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">${emp.department}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">$${emp.salary.toLocaleString()}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+                resultsDiv.innerHTML = tableHtml;
+            } else if (query.includes('select')) {
+                resultsDiv.innerHTML = `<p class="text-red-500">Error: Invalid query. Please try "SELECT * FROM employees;".</p>`;
+            } else {
+                resultsDiv.innerHTML = `<p class="text-red-500">Error: Please enter a valid SQL query.</p>`;
+            }
+        }
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Event listeners
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            document.getElementById('runQueryButton').addEventListener('click', runQuery);
+            document.getElementById('sqlEditor').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && e.shiftKey) { // Run on Shift + Enter
+                    e.preventDefault();
+                    runQuery();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
