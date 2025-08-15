@@ -1,316 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anupath - Learn Programming, AI Tools & No-Code Development</title>
-  <meta name="description" content="Master programming with interactive SQL courses, discover the best AI tools (free & premium), and learn no-code development."/>
-  <meta name="keywords" content="SQL course, AI tools, programming tutorial, no-code development, artificial intelligence, database training, coding bootcamp, tech education, AI directory, developer tools"/>
-  <meta name="author" content="Anupath"/>
-  <link rel="canonical" href="https://ssp1985.github.io/anupath/"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anupath - Learn Programming, AI Tools & No-Code Development</title>
+    <meta name="description" content="Master programming with interactive SQL courses, discover the best AI tools (free & premium), and learn no-code development. Your complete guide to modern technology skills and AI-powered productivity.">
+    <meta name="keywords" content="SQL course, AI tools, programming tutorial, no-code development, artificial intelligence, database training, coding bootcamp, tech education, AI directory, developer tools">
+    <meta name="author" content="Anupath">
+    <link rel="canonical" href="https://anupath.com">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    [data-theme="dark"]{background:#1a202c;color:#e2e8f0}
-    [data-theme="dark"] .bg-white{background:#2d3748}
-    [data-theme="dark"] .text-gray-900{color:#e2e8f0}
-    [data-theme="dark"] .border-gray-200{border-color:#4a5568}
-    .scroll-to-top{position:fixed;bottom:20px;right:20px;z-index:1000}
-    .card-link{cursor:pointer}
-  </style>
+    <!-- Structured Data for LLM/Search Engine Optimization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Anupath",
+        "description": "An online platform offering interactive programming courses and a directory of AI tools.",
+        "url": "https://anupath.com",
+        "logo": "https://anupath.com/logo.png",
+        "sameAs": [
+            "https://twitter.com/anupath",
+            "https://linkedin.com/company/anupath"
+        ]
+    }
+    </script>
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        [data-theme="dark"] {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        [data-theme="dark"] .bg-white {
+            background-color: #2d3748;
+        }
+        [data-theme="dark"] .text-gray-900 {
+            color: #e2e8f0;
+        }
+        [data-theme="dark"] .border-gray-200 {
+            border-color: #4a5568;
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-50">
 
-  <!-- Header -->
-  <header class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
-    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
-      <a href="#top" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Anupath</a>
-      <div class="mt-4 sm:mt-0 flex items-center space-x-4">
-        <a href="#courses" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Courses</a>
-        <a href="#aitools" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">AI Tools</a>
-        <a href="#articles" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Articles</a>
-        <a href="#chat" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Chat</a>
-        <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle theme">
-          <span id="themeIcon">☀️</span>
-        </button>
-      </div>
-    </nav>
-  </header>
+    <!-- Header Section -->
+    <header class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Anupath</a>
+            <div class="mt-4 sm:mt-0 flex space-x-4">
+                <a href="#courses" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Courses</a>
+                <a href="#aitools" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">AI Tools</a>
+                <a href="#articles" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Articles</a>
+                <a href="#chat" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Chat</a>
+                <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    <span id="themeIcon">☀️</span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-  <!-- Main -->
-  <main id="top" class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-12">
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-12">
 
-    <!-- Hero -->
-    <section class="text-center py-16 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl shadow-lg">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">Your Path to Modern Tech Skills</h1>
-      <p class="text-lg sm:text-xl font-light max-w-2xl mx-auto">Master programming with interactive courses, explore the latest AI tools, and learn the art of no-code development.</p>
-      <div class="mt-8 flex justify-center space-x-4">
-        <a href="#courses" class="bg-white text-indigo-600 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition">Start Learning</a>
-        <a href="#aitools" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-indigo-600 transition">Discover AI Tools</a>
-      </div>
-    </section>
+        <!-- Hero Section -->
+        <section class="text-center py-16 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl shadow-lg">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">Your Path to Modern Tech Skills</h1>
+            <p class="text-lg sm:text-xl font-light max-w-2xl mx-auto">Master programming with interactive courses, explore the latest AI tools, and learn the art of no-code development.</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="#courses" class="bg-white text-indigo-600 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">Start Learning</a>
+                <a href="#aitools" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-indigo-600 transition duration-300">Discover AI Tools</a>
+            </div>
+        </section>
 
-    <!-- Courses -->
-    <section id="courses" class="py-12">
-      <h2 class="text-3xl font-bold text-center mb-8">Interactive Courses</h2>
-      <div id="courses-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-    </section>
+        <!-- Courses Section -->
+        <section id="courses" class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Interactive Courses</h2>
+            <div id="courses-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course cards will be rendered here -->
+            </div>
+        </section>
 
-    <!-- AI Tools -->
-    <section id="aitools" class="py-12">
-      <h2 class="text-3xl font-bold text-center mb-8">AI Tools Directory</h2>
-      <div class="flex justify-center space-x-2 mb-6">
-        <button data-filter="featured" class="filter-tab px-4 py-2 rounded-full bg-indigo-500 text-white font-semibold hover:bg-indigo-600 transition">Featured</button>
-        <button data-filter="free" class="filter-tab px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition">Free Tools</button>
-        <button data-filter="premium" class="filter-tab px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition">Premium Tools</button>
-      </div>
-      <div id="aitools-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-    </section>
+        <!-- AI Tools Section -->
+        <section id="aitools" class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-8">AI Tools Directory</h2>
+            <div class="flex justify-center space-x-2 mb-6">
+                <button data-filter="featured" class="filter-tab px-4 py-2 rounded-full bg-indigo-500 text-white font-semibold hover:bg-indigo-600 transition duration-300">Featured</button>
+                <button data-filter="free" class="filter-tab px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">Free Tools</button>
+                <button data-filter="premium" class="filter-tab px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">Premium Tools</button>
+            </div>
+            <div id="aitools-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI tool cards will be rendered here -->
+            </div>
+        </section>
 
-    <!-- Articles -->
-    <section id="articles" class="py-12">
-      <h2 class="text-3xl font-bold text-center mb-8">Latest Articles</h2>
-      <div id="articles-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-    </section>
+        <!-- Articles Section -->
+        <section id="articles" class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Latest Articles</h2>
+            <div id="articles-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article cards will be rendered here -->
+            </div>
+        </section>
 
-    <!-- Chat -->
-    <section id="chat" class="py-12">
-      <h2 class="text-3xl font-bold text-center mb-8">Talk to Anupath AI</h2>
-      <div class="max-w-xl mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col space-y-4">
-        <div id="chatbox" class="h-64 overflow-y-auto p-4 border rounded-lg bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-          <p class="text-gray-500 dark:text-gray-400">Ask me anything about programming, AI, or no-code development!</p>
+        <!-- Interactive Chat Section -->
+        <section id="chat" class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Talk to Anupath AI</h2>
+            <div class="max-w-xl mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col space-y-4">
+                <div id="chatbox" class="h-64 overflow-y-auto p-4 border rounded-lg bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                    <p class="text-gray-500 dark:text-gray-400">Ask me anything about programming, AI, or no-code development!</p>
+                </div>
+                <div class="flex space-x-2">
+                    <input type="text" id="questionInput" placeholder="Type your question here..." class="flex-grow p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <button id="sendChatButton" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Send</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; <span id="currentYear"></span> Anupath. All rights reserved.</p>
+            <p class="mt-2">Stay up-to-date with the latest in AI and tech education.</p>
         </div>
-        <div class="flex space-x-2">
-          <input type="text" id="questionInput" placeholder="Type your question here..." class="flex-grow p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:ring-2 focus:ring-indigo-500 focus:outline-none"/>
-          <button id="sendChatButton" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition">Send</button>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-  </main>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 hidden" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p>&copy; <span id="currentYear"></span> Anupath. All rights reserved.</p>
-      <p class="mt-2">Stay up-to-date with the latest in AI and tech education.</p>
-    </div>
-  </footer>
+    <script>
+        /************* Config *************/
+        // Your Cloudflare Worker proxy (OpenRouter → DeepSeek)
+        const WORKER_URL = "https://floral-queen-1a1d.brw-sudheer.workers.dev/";
 
-  <!-- Scroll To Top -->
-  <button id="scrollToTopBtn" class="scroll-to-top bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition hidden" aria-label="Scroll to top">
-    ↑
-  </button>
+        // Prefer fetching real JSON; fall back to mocks
+        const coursesDataUrl = 'courses.json';
+        // Try both possible filenames for tools
+        const aiToolsDataUrls = ['ai-tools.json', 'aitools.json'];
+        const articlesDataUrl = 'articles.json';
 
-  <script>
-    /***********************
-     * Config
-     ***********************/
-    const WORKER_URL = "https://floral-queen-1a1d.brw-sudheer.workers.dev/"; // your Cloudflare Worker
+        /************* Mocks (fallback) *************/
+        const mockCoursesData = [
+            { id: 1, title: 'Interactive SQL for Beginners', description: 'Master SQL fundamentals with hands-on, in-browser exercises.', image: 'https://placehold.co/400x250/E0E7FF/4338CA?text=SQL+Course', link: 'sql-training.html', tag: 'SQL' }
+        ];
 
-    /***********************
-     * Theme
-     ***********************/
-    function initializeTheme(){
-      const t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
-      document.documentElement.setAttribute('data-theme', t);
-      document.documentElement.classList.add(t === 'dark' ? 'dark':'light');
-      document.getElementById('themeIcon').textContent = t === 'dark' ? '☀️' : '🌙';
-    }
-    function toggleTheme(){
-      const t = document.documentElement.getAttribute('data-theme');
-      const next = t === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      document.documentElement.classList.remove(t);
-      document.documentElement.classList.add(next);
-      localStorage.setItem('theme', next);
-      document.getElementById('themeIcon').textContent = next === 'dark' ? '☀️' : '🌙';
-    }
+        const mockAIToolsData = [
+            { id: 1, title: 'Gemini', description: 'A powerful AI model for text, images, and code.', image: 'https://placehold.co/400x250/F3E8FF/5B21B6?text=Gemini', link: '#', type: 'text', featured: true },
+            { id: 4, title: 'ChatGPT', description: 'An AI-powered chatbot that can answer questions, write stories, and more.', image: 'https://placehold.co/400x250/ECFDF5/059669?text=ChatGPT', link: '#', type: 'text', featured: true }
+        ];
 
-    /***********************
-     * Helpers
-     ***********************/
-    async function tryJson(urls){
-      for (const u of urls){
-        try{
-          const r = await fetch(u, {cache: 'no-store'});
-          if (r.ok) return await r.json();
-        }catch(e){}
-      }
-      return null;
-    }
+        const mockArticlesData = [
+            { id: 3, title: '5 Essential SQL Commands for Beginners', description: 'Quick guide with examples.', image: 'https://placehold.co/400x250/DBEAFE/1E40AF?text=SQL+Article', link: 'sql-training.html#essentials', date: '2023-10-20' }
+        ];
 
-    /***********************
-     * Renderers
-     ***********************/
-    function renderCourses(courses){
-      const c = document.getElementById('courses-container');
-      c.innerHTML = courses.map(course => `
-        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 card-link"
-             role="link" tabindex="0" aria-label="${course.title}"
-             onclick="window.location.href='${course.link}'"
-             onkeypress="if(event.key==='Enter'){window.location.href='${course.link}'}">
-          <img src="${course.image}" alt="${course.title}" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <span class="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-400">${course.tag || ''}</span>
-            <h3 class="text-xl font-semibold mt-2">${course.title}</h3>
-            <p class="text-gray-500 dark:text-gray-400 mt-2">${course.description || ''}</p>
-            <a href="${course.link}" class="inline-block mt-4 text-indigo-600 dark:text-indigo-400 font-medium hover:underline">Start Course &rarr;</a>
-          </div>
-        </div>
-      `).join('');
-    }
+        let allAIToolsData = [];
 
-    function renderAITools(tools){
-      const c = document.getElementById('aitools-container');
-      c.innerHTML = tools.map(t => `
-        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-          <img src="${t.image}" alt="${t.title}" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <span class="text-xs font-semibold uppercase tracking-wide text-purple-600 dark:text-purple-400">${t.type || ''}</span>
-            <h3 class="text-xl font-semibold mt-2">${t.title}</h3>
-            <p class="text-gray-500 dark:text-gray-400 mt-2">${t.description || ''}</p>
-            <a href="${t.link || '#'}" class="inline-block mt-4 text-purple-600 dark:text-purple-400 font-medium hover:underline">Learn More &rarr;</a>
-          </div>
-        </div>
-      `).join('');
-    }
+        /************* Theme *************/
+        function initializeTheme() {
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            document.documentElement.classList.add(currentTheme === 'dark' ? 'dark' : 'light');
+            document.getElementById('themeIcon').textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            document.documentElement.classList.remove(currentTheme);
+            document.documentElement.classList.add(newTheme);
+            localStorage.setItem('theme', newTheme);
+            document.getElementById('themeIcon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        }
 
-    function renderArticles(articles){
-      const c = document.getElementById('articles-container');
-      c.innerHTML = articles.map(a => `
-        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-          <img src="${a.image}" alt="${a.title}" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <p class="text-sm text-gray-500 dark:text-gray-400">${a.date || ''}</p>
-            <h3 class="text-xl font-semibold mt-2">${a.title}</h3>
-            <p class="text-gray-500 dark:text-gray-400 mt-2">${a.description || ''}</p>
-            <a href="${a.link || '#'}" class="inline-block mt-4 text-gray-600 dark:text-gray-300 font-medium hover:underline">Read Article &rarr;</a>
-          </div>
-        </div>
-      `).join('');
-    }
+        /************* Rendering *************/
+        function renderCourses(courses) {
+            const container = document.getElementById('courses-container');
+            container.innerHTML = courses.map(course => `
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <img src="${course.image}" alt="${course.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-400">${course.tag || ''}</span>
+                        <h3 class="text-xl font-semibold mt-2">${course.title}</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2">${course.description || ''}</p>
+                        <a href="${course.link}" class="inline-block mt-4 text-indigo-600 dark:text-indigo-400 font-medium hover:underline">Start Course &rarr;</a>
+                    </div>
+                </div>
+            `).join('');
+        }
 
-    /***********************
-     * Data + Load
-     ***********************/
-    const mockCourses = [
-      { id:1, title:'Interactive SQL for Beginners', description:'Master SQL fundamentals with hands-on, in-browser exercises.', image:'https://placehold.co/400x250/E0E7FF/4338CA?text=SQL+Course', link:'sql-training.html', tag:'SQL' },
-      { id:2, title:'No-Code Development with Webflow', description:'Build responsive websites without code.', image:'https://placehold.co/400x250/F0F9FF/0E7490?text=Webflow+Course', link:'#', tag:'No-Code' },
-      { id:3, title:'Introduction to Prompt Engineering', description:'Craft effective prompts for LLMs.', image:'https://placehold.co/400x250/E0F2FE/0C4A6E?text=Prompt+Engineering', link:'#', tag:'AI' }
-    ];
-    const mockTools = [
-      { id:1, title:'Gemini', description:'Model for text, images, and code.', image:'https://placehold.co/400x250/F3E8FF/5B21B6?text=Gemini', link:'#', type:'text', featured:true },
-      { id:2, title:'DALL·E', description:'Generate images from text.', image:'https://placehold.co/400x250/FEE2E2/B91C1C?text=DALL-E', link:'#', type:'image', featured:false },
-      { id:3, title:'Midjourney', description:'Independent research lab for imagery.', image:'https://placehold.co/400x250/FEF2F2/F97316?text=Midjourney', link:'#', type:'image', featured:false },
-      { id:4, title:'ChatGPT', description:'AI-powered assistant.', image:'https://placehold.co/400x250/ECFDF5/059669?text=ChatGPT', link:'#', type:'text', featured:true }
-    ];
-    const mockArticles = [
-      { id:1, title:'The Future of No-Code Development', description:'How no-code empowers creators.', image:'https://placehold.co/400x250/D1D5DB/1F2937?text=No-Code+Article', link:'#', date:'2023-10-27' },
-      { id:2, title:"AI in the Modern Developer's Workflow", description:'How AI changes writing, debugging, deployments.', image:'https://placehold.co/400x250/D1FAE5/065F46?text=AI+Article', link:'#', date:'2023-10-25' },
-      { id:3, title:'5 Essential SQL Commands for Beginners', description:'SELECT, WHERE, ORDER BY, GROUP BY, JOIN with examples.', image:'https://placehold.co/400x250/DBEAFE/1E40AF?text=SQL+Article', link:'sql-training.html#essentials', date:'2023-10-20' }
-    ];
+        function renderAITools(tools) {
+            const container = document.getElementById('aitools-container');
+            container.innerHTML = tools.map(tool => `
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <img src="${tool.image}" alt="${tool.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold uppercase tracking-wide text-purple-600 dark:text-purple-400">${tool.type || ''}</span>
+                        <h3 class="text-xl font-semibold mt-2">${tool.title}</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2">${tool.description || ''}</p>
+                        <a href="${tool.link || '#'}" class="inline-block mt-4 text-purple-600 dark:text-purple-400 font-medium hover:underline">Learn More &rarr;</a>
+                    </div>
+                </div>
+            `).join('');
+        }
 
-    let allAIToolsData = [];
+        function renderArticles(articles) {
+            const container = document.getElementById('articles-container');
+            container.innerHTML = articles.map(article => `
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">${article.date || ''}</p>
+                        <h3 class="text-xl font-semibold mt-2">${article.title}</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2">${article.description || ''}</p>
+                        <a href="${article.link || '#'}" class="inline-block mt-4 text-gray-600 dark:text-gray-300 font-medium hover:underline">Read Article &rarr;</a>
+                    </div>
+                </div>
+            `).join('');
+        }
 
-    async function loadContent(){
-      // Try to fetch; fall back to mock data
-      const courses = await tryJson(['courses.json']) || mockCourses;
-      const aiTools = await (tryJson(['ai-tools.json','aitools.json'])) || mockTools;
-      const articles = await tryJson(['articles.json']) || mockArticles;
+        /************* Data Load *************/
+        async function fetchJson(url) {
+            try {
+                const r = await fetch(url, { cache: 'no-store' });
+                if (!r.ok) return null;
+                return await r.json();
+            } catch { return null; }
+        }
 
-      renderCourses(courses);
-      allAIToolsData = aiTools;
-      renderAITools(allAIToolsData.filter(t => t.featured));
-      renderArticles(articles);
-    }
+        async function loadContent() {
+            try {
+                const courses = (await fetchJson(coursesDataUrl)) || mockCoursesData;
+                // Try ai-tools.json then aitools.json
+                let aiTools = null;
+                for (const u of aiToolsDataUrls) {
+                    aiTools = aiTools || (await fetchJson(u));
+                }
+                aiTools = aiTools || mockAIToolsData;
 
-    /***********************
-     * Filters
-     ***********************/
-    function filterTools(filterType){
-      const tabs = document.querySelectorAll('.filter-tab');
-      tabs.forEach(tab => {
-        tab.classList.remove('bg-indigo-500','text-white');
-        tab.classList.add('bg-gray-200','dark:bg-gray-700','text-gray-800','dark:text-gray-200');
-      });
-      const active = document.querySelector(`[data-filter="${filterType}"]`);
-      active.classList.remove('bg-gray-200','dark:bg-gray-700','text-gray-800','dark:text-gray-200');
-      active.classList.add('bg-indigo-500','text-white');
+                const articles = (await fetchJson(articlesDataUrl)) || mockArticlesData;
 
-      let filtered = [];
-      if (filterType === 'featured') filtered = allAIToolsData.filter(t => t.featured);
-      else if (filterType === 'free') filtered = allAIToolsData.filter(t => (t.pricing || '').toLowerCase() === 'free' || (t.link||'').includes('free'));
-      else filtered = allAIToolsData.filter(t => (t.pricing || '').toLowerCase() !== 'free');
-      renderAITools(filtered);
-    }
+                renderCourses(courses);
+                allAIToolsData = aiTools;
+                renderAITools(allAIToolsData.filter(tool => tool.featured));
+                renderArticles(articles);
+            } catch (error) {
+                console.error('Failed to load content:', error);
+                const fallbackMessage = '<p class="text-center text-red-500 col-span-3">Could not load content. Please check back for the latest updates.</p>';
+                document.getElementById('courses-container').innerHTML = fallbackMessage;
+                document.getElementById('aitools-container').innerHTML = fallbackMessage;
+                document.getElementById('articles-container').innerHTML = fallbackMessage;
+            }
+        }
 
-    /***********************
-     * Chat (DeepSeek via Worker)
-     ***********************/
-    async function askQuestion(){
-      const input = document.getElementById('questionInput');
-      const chatbox = document.getElementById('chatbox');
-      const userText = input?.value?.trim();
-      if (!userText) return;
+        /************* Chat (DeepSeek via OpenRouter Worker) *************/
+        async function askQuestion() {
+            const input = document.getElementById('questionInput');
+            const chatbox = document.getElementById('chatbox');
+            const userQuestion = (input.value || '').trim();
 
-      chatbox.innerHTML += `<p class="text-indigo-600 dark:text-indigo-400 font-semibold">You: ${userText}</p>`;
-      input.value = '';
+            if (!userQuestion) return;
 
-      try{
-        const resp = await fetch(WORKER_URL, {
-          method: "POST",
-          headers: {"Content-Type":"application/json"},
-          body: JSON.stringify({
-            model: "deepseek/deepseek-chat", // or "deepseek/deepseek-r1:free"
-            temperature: 0.5,
-            max_tokens: 600,
-            messages: [
-              { role: "system", content: "You are Anupath AI. Help with SQL, programming, and this website’s content. Keep answers short and practical." },
-              { role: "user", content: userText }
-            ]
-          })
+            chatbox.innerHTML += `<div class="mb-2"><span class="font-semibold text-indigo-600 dark:text-indigo-400">You:</span> ${userQuestion}</div>`;
+            input.value = '';
+
+            // Temporary loading line
+            const loading = document.createElement('div');
+            loading.className = 'mb-2 text-gray-500 dark:text-gray-400';
+            loading.textContent = 'Anupath AI is thinking...';
+            chatbox.appendChild(loading);
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+            try {
+                const resp = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        model: "deepseek/deepseek-chat",  // or "deepseek/deepseek-r1:free"
+                        temperature: 0.6,
+                        max_tokens: 600,
+                        messages: [
+                            { role: "system", content: "You are Anupath AI. Help with SQL, programming, and no-code. Keep answers short and practical." },
+                            { role: "user", content: userQuestion }
+                        ]
+                    })
+                });
+
+                const data = await resp.json();
+                loading.remove();
+
+                const aiResponseText = data?.choices?.[0]?.message?.content || "(no response)";
+                chatbox.innerHTML += `<div class="mb-2"><span class="font-semibold text-purple-600 dark:text-purple-400">Anupath AI:</span> ${aiResponseText}</div>`;
+            } catch (error) {
+                console.error('AI error:', error);
+                loading.remove();
+                chatbox.innerHTML += `<div class="text-red-500 mb-2">Error: Could not get a response. Please try again.</div>`;
+            }
+
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        /************* Filtering AI Tools *************/
+        function filterTools(filterType) {
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-indigo-500', 'text-white');
+                tab.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-800', 'dark:text-gray-200');
+            });
+
+            const activeTab = document.querySelector(`[data-filter="${filterType}"]`);
+            activeTab.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-800', 'dark:text-gray-200');
+            activeTab.classList.add('bg-indigo-500', 'text-white');
+
+            let filteredTools = [];
+            if (filterType === 'featured') {
+                filteredTools = allAIToolsData.filter(tool => tool.featured);
+            } else if (filterType === 'free') {
+                filteredTools = allAIToolsData.filter(tool =>
+                    (tool.pricing || '').toLowerCase() === 'free' || (tool.link || '').includes('free')
+                );
+            } else if (filterType === 'premium') {
+                filteredTools = allAIToolsData.filter(tool =>
+                    (tool.pricing || '').toLowerCase() !== 'free' && !(tool.link || '').includes('free')
+                );
+            }
+            renderAITools(filteredTools);
+        }
+
+        /************* Scroll To Top *************/
+        window.onscroll = function() {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /************* Initialization *************/
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
+            loadContent();
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Theme toggle
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+            // Chat events
+            document.getElementById('sendChatButton').addEventListener('click', askQuestion);
+            document.getElementById('questionInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') askQuestion();
+            });
+
+            // Scroll to top
+            document.getElementById('scrollToTopBtn').addEventListener('click', scrollToTop);
+
+            // Filter tabs
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    filterTools(this.dataset.filter);
+                });
+            });
+
+            // Default filter
+            document.querySelector('[data-filter="featured"]').click();
         });
-        const data = await resp.json();
-        const text = data?.choices?.[0]?.message?.content || "(no response)";
-        chatbox.innerHTML += `<p class="text-gray-700 dark:text-gray-300">Anupath AI: ${text}</p>`;
-        chatbox.scrollTop = chatbox.scrollHeight;
-      }catch(e){
-        chatbox.innerHTML += `<p class="text-red-500">AI error: ${e.message}</p>`;
-      }
-    }
-
-    /***********************
-     * Scroll-to-top + Init
-     ***********************/
-    window.onscroll = function(){
-      const btn = document.getElementById("scrollToTopBtn");
-      if (document.documentElement.scrollTop > 200) btn.classList.remove('hidden');
-      else btn.classList.add('hidden');
-    };
-    function scrollToTop(){ window.scrollTo({top:0,behavior:'smooth'}); }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      initializeTheme();
-      loadContent();
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-      document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-      document.getElementById('scrollToTopBtn').addEventListener('click', scrollToTop);
-
-      // Chat events
-      document.getElementById('sendChatButton').addEventListener('click', askQuestion);
-      document.getElementById('questionInput').addEventListener('keypress', e => { if (e.key === 'Enter') askQuestion(); });
-
-      // Filter tabs
-      document.querySelectorAll('.filter-tab').forEach(tab => {
-        tab.addEventListener('click', function(){ filterTools(this.dataset.filter); });
-      });
-      // Set default filter
-      document.querySelector('[data-filter="featured"]').click();
-    });
-  </script>
+    </script>
 </body>
 </html>
