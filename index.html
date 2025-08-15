@@ -3,1028 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anupath - Learn Programming, AI Tools & No-Code Development | Interactive Courses & AI Directory</title>
+    <title>Anupath - Learn Programming, AI Tools & No-Code Development</title>
     <meta name="description" content="Master programming with interactive SQL courses, discover the best AI tools (free & premium), and learn no-code development. Your complete guide to modern technology skills and AI-powered productivity.">
     <meta name="keywords" content="SQL course, AI tools, programming tutorial, no-code development, artificial intelligence, database training, coding bootcamp, tech education, AI directory, developer tools">
     <meta name="author" content="Anupath">
-    <meta property="og:title" content="Anupath - Interactive Programming & AI Tools Learning Platform">
-    <meta property="og:description" content="Learn programming with hands-on courses and discover the best AI tools for productivity. Free interactive SQL training and comprehensive AI tools directory.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://anupath.com">
     <link rel="canonical" href="https://anupath.com">
-    
-    <!-- Structured Data for LLM/Search Engine Optimization -->
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
         "name": "Anupath",
-        "description": "Interactive programming courses and AI tools directory for developers and tech enthusiasts",
+        "description": "An online platform offering interactive programming courses and a directory of AI tools.",
         "url": "https://anupath.com",
-        "sameAs": [],
-        "courseMode": "online",
-        "educationalCredentialAwarded": "Certificate",
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Programming and AI Courses",
-            "itemListElement": [
-                {
-                    "@type": "Course",
-                    "name": "Interactive SQL Training",
-                    "description": "Learn database querying with hands-on practice",
-                    "provider": "Anupath",
-                    "educationalLevel": "Beginner to Intermediate"
-                }
-            ]
-        }
+        "logo": "https://anupath.com/logo.png",
+        "sameAs": [
+            "https://twitter.com/anupath",
+            "https://linkedin.com/company/anupath"
+        ]
     }
     </script>
-    
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /*
-        * CSS Variables for a dynamic theme system.
-        * This allows for easy switching between light and dark modes.
-        */
-        :root {
-            /* Light Mode Colors */
-            --primary: #4f46e5;
-            --primary-light: #6366f1;   
-            --primary-dark: #3730a3;
-            --secondary: #06b6d4;
-            --secondary-light: #22d3ee;
-            --accent: #10b981;
-            --accent-hover: #059669;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-tertiary: #f1f5f9;
-            --surface: #ffffff;
-            --surface-hover: #f8fafc;
-            
-            --text-primary: #0f172a;
-            --text-secondary: #334155;
-            --text-muted: #64748b;
-            --text-light: #94a3b8;
-            
-            --border: #e2e8f0;
-            --border-hover: #cbd5e1;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-        }
-        
-        /* Dark Mode Colors - Applied when the data-theme attribute is set to "dark" */
-        [data-theme="dark"] {
-            --primary: #6366f1;
-            --primary-light: #7c3aed;   
-            --primary-dark: #4f46e5;
-            --secondary: #22d3ee;
-            --secondary-light: #06b6d4;
-            --accent: #34d399;
-            --accent-hover: #10b981;
-            --warning: #fbbf24;
-            --danger: #f87171;
-            
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-tertiary: #334155;
-            --surface: #1e293b;
-            --surface-hover: #334155;
-            
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --text-light: #64748b;
-            
-            --border: #334155;
-            --border-hover: #475569;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4);
-        }
-        
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-        }
-        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
-            font-size: 16px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+        [data-theme="dark"] {
+            background-color: #1a202c;
+            color: #e2e8f0;
         }
-        
-        /* Header with Theme Toggle */
-        header {
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(8px);
-            background: rgba(255, 255, 255, 0.95);
-            transition: all 0.3s ease;
+        [data-theme="dark"] .bg-white {
+            background-color: #2d3748;
         }
-        
-        [data-theme="dark"] header {
-            background: rgba(15, 23, 42, 0.95);
+        [data-theme="dark"] .text-gray-900 {
+            color: #e2e8f0;
         }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
+        [data-theme="dark"] .border-gray-200 {
+            border-color: #4a5568;
         }
-        
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
         }
-        
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        /* Theme Toggle Button */
-        .theme-toggle {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 3rem;
-            height: 3rem;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .theme-toggle:hover {
-            border-color: var(--primary);
-            box-shadow: var(--shadow);
-        }
-        
-        .theme-icon {
-            font-size: 1.25rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .theme-toggle:hover .theme-icon {
-            transform: rotate(15deg);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-            padding: 5rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%23e2e8f0" stroke-width="1" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            z-index: 1;
-        }
-        
-        [data-theme="dark"] .hero::before {
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%23334155" stroke-width="1" opacity="0.2"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.1;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.7;
-        }
-        
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 2rem;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            font-size: 1rem;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: var(--shadow);
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Section Styles */
-        .section {
-            padding: 5rem 0;
-        }
-        
-        .section-alt {
-            background: var(--bg-secondary);
-        }
-        
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        
-        /* Filter System */
-        .filter-container {
-            margin-bottom: 3rem;
-        }
-        
-        .filter-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-        
-        .filter-tab {
-            padding: 0.5rem 1.25rem;
-            border: 1px solid var(--border);
-            border-radius: 2rem;
-            background: var(--surface);
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-        
-        .filter-tab:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
-        .filter-tab.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        /* Grid Layouts */
-        .grid {
-            display: grid;
-            gap: 2rem;
-        }
-        
-        .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-        
-        .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        }
-        
-        /* Card Styles */
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            position: relative;
-            height: fit-content;
-        }
-        
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--border-hover);
-        }
-        
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-        
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-        
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-        
-        .card-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .card-meta {
-            display: flex;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-        
-        /* Badges */
-        .badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.025em;
-        }
-        
-        .badge-free {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--accent);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-        }
-        
-        .badge-freemium {
-            background: rgba(245, 158, 11, 0.1);
-            color: var(--warning);
-            border: 1px solid rgba(245, 158, 11, 0.2);
-        }
-        
-        .badge-paid {
-            background: rgba(79, 70, 229, 0.1);
-            color: var(--primary);
-            border: 1px solid rgba(79, 70, 229, 0.2);
-        }
-        
-        .badge-category {
-            background: var(--bg-tertiary);
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-        }
-        
-        /* Article Cards */
-        .article-card {
-            padding: 1.5rem;
-        }
-        
-        .article-meta {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .article-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-        
-        .article-excerpt {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-        
-        .read-more {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-        
-        .read-more:hover {
-            color: var(--primary-dark);
-        }
-        
-        /* Chat Interface */
-        .chat-container {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .chat-header {
-            margin-bottom: 1.5rem;
-        }
-        
-        .chat-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .chat-input-container {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .chat-input {
-            flex: 1;
-            padding: 0.875rem;
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            transition: border-color 0.3s ease;
-        }
-        
-        .chat-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-        }
-        
-        .chat-response {
-            margin-top: 1rem;
-            padding: 1rem;
-            background: var(--bg-secondary);
-            border-radius: 0.75rem;
-            border-left: 4px solid var(--primary);
-            display: none;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-            padding: 3rem 0 1rem;
-            margin-top: 4rem;
-        }
-        
-        [data-theme="dark"] footer {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h4 {
-            color: var(--bg-primary);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        [data-theme="dark"] .footer-section h4 {
-            color: var(--text-primary);
-        }
-        
-        .footer-section p, .footer-section li {
-            color: var(--text-light);
-            line-height: 1.6;
-            font-size: 0.9rem;
-        }
-        
-        [data-theme="dark"] .footer-section p, [data-theme="dark"] .footer-section li {
-            color: var(--text-secondary);
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        [data-theme="dark"] .footer-section a {
-            color: var(--text-secondary);
-        }
-        
-        .footer-section a:hover {
-            color: var(--bg-primary);
-        }
-        
-        [data-theme="dark"] .footer-section a:hover {
-            color: var(--text-primary);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #334155;
-            color: var(--text-light);
-            font-size: 0.85rem;
-        }
-        
-        [data-theme="dark"] .footer-bottom {
-            color: var(--text-secondary);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
-            .nav-right { gap: 1rem; }
-            .hero-cta { flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 300px; justify-content: center; }
-            .section { padding: 3rem 0; }
-            .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .chat-input-container { flex-direction: column; }
-            .filter-tabs { justify-content: flex-start; overflow-x: auto; padding-bottom: 0.5rem; }
-        }
-        
-        /* Animation for loading states */
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-in { animation: fadeInUp 0.6s ease-out; }
     </style>
 </head>
-<body>
-    <!-- Header with Theme Toggle -->
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">Anupath</a>
-            <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#ai-tools">AI Tools</a></li>
-                    <li><a href="#articles">Articles</a></li>
-                    <li><a href="#tutorials">Tutorials</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-                <!-- Added id="themeIcon" to the span for the JavaScript to target -->
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
-                    <span class="theme-icon" id="themeIcon">🌙</span>
+<body class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-50">
+
+    <header class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Anupath</a>
+            <div class="mt-4 sm:mt-0 flex space-x-4">
+                <a href="#courses" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Courses</a>
+                <a href="#aitools" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">AI Tools</a>
+                <a href="#articles" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Articles</a>
+                <a href="#chat" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Chat</a>
+                <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    <span id="themeIcon">☀️</span>
                 </button>
             </div>
         </nav>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Master Programming & AI Tools</h1>
-                    <p class="hero-subtitle">
-                        Your comprehensive learning platform for <strong>interactive SQL training</strong>, <strong>AI tools discovery</strong>, and <strong>no-code development</strong>. Learn programming with hands-on courses, explore the best artificial intelligence tools, and accelerate your tech career with practical skills.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#courses" class="btn btn-primary">
-                            🚀 Start Learning Free
-                        </a>
-                        <a href="#ai-tools" class="btn btn-secondary">
-                            🔍 Explore AI Tools
-                        </a>
-                    </div>
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-12">
+
+        <section class="text-center py-16 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl shadow-lg">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">Your Path to Modern Tech Skills</h1>
+            <p class="text-lg sm:text-xl font-light max-w-2xl mx-auto">Master programming with interactive courses, explore the latest AI tools, and learn the art of no-code development.</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="#courses" class="bg-white text-indigo-600 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">Start Learning</a>
+                <a href="#aitools" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-indigo-600 transition duration-300">Discover AI Tools</a>
+            </div>
+        </section>
+
+        <section id="courses" class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Interactive Courses</h2>
+            <div id="courses-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+        </section>
+
+        <section id="aitools" class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-8">AI Tools Directory</h2>
+            <div class="flex justify-center space-x-2 mb-6">
+                <button data-filter="featured" class="filter-tab px-4 py-2 rounded-full bg-indigo-500 text-white font-semibold hover:bg-indigo-600 transition duration-300">Featured</button>
+                <button data-filter="free" class="filter-tab px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">Free Tools</button>
+                <button data-filter="premium" class="filter-tab px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">Premium Tools</button>
+            </div>
+            <div id="aitools-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+        </section>
+
+        <section id="articles" class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Latest Articles</h2>
+            <div id="articles-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+        </section>
+
+        <section id="chat" class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Talk to Anupath AI</h2>
+            <div class="max-w-xl mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col space-y-4">
+                <div id="chatbox" class="h-64 overflow-y-auto p-4 border rounded-lg bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                    <p class="text-gray-500 dark:text-gray-400">Ask me anything about programming, AI, or no-code development!</p>
+                </div>
+                <div class="flex space-x-2">
+                    <input type="text" id="questionInput" placeholder="Type your question here..." class="flex-grow p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <button id="sendChatButton" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Send</button>
                 </div>
             </div>
         </section>
 
-        <!-- Interactive Courses Section -->
-        <section id="courses" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Interactive Programming Courses</h2>
-                    <p class="section-subtitle">
-                        Learn by doing with our hands-on programming courses. Get instant feedback, track your progress, and master essential development skills through practice.
-                    </p>
-                </div>
-                <!-- Courses will be dynamically populated here by JavaScript -->
-                <div class="grid grid-3" id="coursesGrid"></div>
-            </div>
-        </section>
-        
-        <!-- AI Tools Directory Section -->
-        <section id="ai-tools" class="section section-alt">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">AI Tools & Platforms Directory</h2>
-                    <p class="section-subtitle">
-                        Discover the best artificial intelligence tools for productivity, development, and creativity. Compare free, freemium, and premium AI platforms to find the perfect tools for your workflow.
-                    </p>
-                </div>
-                <div class="filter-container">
-                    <div class="filter-tabs">
-                        <div class="filter-tab active" data-filter="all">All Tools</div>
-                        <div class="filter-tab" data-filter="free">Free</div>
-                        <div class="filter-tab" data-filter="freemium">Freemium</div>
-                        <div class="filter-tab" data-filter="paid">Premium</div>
-                        <div class="filter-tab" data-filter="development">Development</div>
-                        <div class="filter-tab" data-filter="creative">Creative AI</div>
-                        <div class="filter-tab" data-filter="productivity">Productivity</div>
-                    </div>
-                </div>
-                <!-- AI Tools will be dynamically populated here by JavaScript -->
-                <div class="grid grid-2" id="aiToolsGrid"></div>
-                <div style="text-align: center; margin-top: 3rem;">
-                    <button class="btn btn-secondary" id="load-more-btn">
-                        Load More AI Tools
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Articles & Tutorials Section -->
-        <section id="articles" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Latest Articles & Tutorials</h2>
-                    <p class="section-subtitle">
-                        Stay up-to-date with the latest tech trends. Our articles and tutorials cover a wide range of topics, from coding best practices to deep dives into new AI technologies.
-                    </p>
-                </div>
-                <!-- Articles will be dynamically populated here by JavaScript -->
-                <div class="grid grid-3" id="articlesGrid"></div>
-            </div>
-        </section>
-
-        <!-- Interactive SQL Quiz Section -->
-        <section id="sql-quiz" class="section section-alt">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Daily SQL Quiz</h2>
-                    <p class="section-subtitle">
-                        Test your knowledge and sharpen your skills with our daily interactive SQL quiz.
-                    </p>
-                </div>
-                <!-- Quiz questions will be dynamically populated here -->
-                <div id="quiz-container" class="space-y-6"></div>
-            </div>
-        </section>
-
-        <!-- AI Chatbot Section -->
-        <section id="ai-chat" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">AI Assistant</h2>
-                    <p class="section-subtitle">
-                        Need a quick answer? Our AI assistant can help with coding questions, definitions, and more.
-                    </p>
-                </div>
-                <div class="chat-container">
-                    <div class="chat-header">
-                        <h3 class="chat-title">Ask me anything!</h3>
-                        <p class="text-secondary">Type your question below and hit enter.</p>
-                    </div>
-                    <div id="chat-messages" class="h-64 overflow-y-auto mb-4 p-4 border border-border rounded-lg bg-bg-secondary">
-                        <!-- Chat messages will appear here -->
-                    </div>
-                    <div class="chat-input-container">
-                        <textarea id="questionInput" class="chat-input" placeholder="e.g. What is a primary key in SQL?"></textarea>
-                        <button id="sendChatButton" class="btn btn-primary">Send</button>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <a href="#" class="logo">Anupath</a>
-                    <p>Your journey to mastering technology starts here. We provide interactive courses, AI tool directories, and insightful articles to help you succeed.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#ai-tools">AI Tools</a></li>
-                        <li><a href="#articles">Articles</a></li>
-                        <li><a href="#about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Stay Connected</h4>
-                    <p>Subscribe to our newsletter for the latest updates on new courses and tools.</p>
-                    <!-- Newsletter form can go here -->
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Anupath. All rights reserved.</p>
-            </div>
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; <span id="currentYear"></span> Anupath. All rights reserved.</p>
+            <p class="mt-2">Stay up-to-date with the latest in AI and tech education.</p>
         </div>
     </footer>
 
+    <button id="scrollToTopBtn" class="scroll-to-top bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
     <script>
-        // Load the Inter font
-        const link = document.createElement('link');
-        link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap';
-        link.rel = 'stylesheet';
-        document.head.appendChild(link);
+        // Data URLs for external JSON files
+        // Replace these with the actual URLs of your hosted JSON files
+        const coursesDataUrl = 'courses.json';
+        const aiToolsDataUrl = 'aitools.json';
+        const articlesDataUrl = 'articles.json';
+
+        // --- MOCK DATA FOR DEMONSTRATION ---
+        // In a real scenario, you would replace this with fetch() calls to your JSON files.
+        const mockCoursesData = [
+            { id: 1, title: 'Interactive SQL for Beginners', description: 'Master SQL fundamentals with hands-on, in-browser exercises.', image: 'https://placehold.co/400x250/E0E7FF/4338CA?text=SQL+Course', link: 'sql_training.html', tag: 'SQL' },
+            { id: 2, title: 'No-Code Development with Webflow', description: 'Build beautiful, responsive websites without writing a single line of code.', image: 'https://placehold.co/400x250/F0F9FF/0E7490?text=Webflow+Course', link: '#', tag: 'No-Code' },
+            { id: 3, title: 'Introduction to Prompt Engineering', description: 'Learn to craft effective prompts to get the best results from large language models.', image: 'https://placehold.co/400x250/E0F2FE/0C4A6E?text=Prompt+Engineering', link: '#', tag: 'AI' }
+        ];
+
+        const mockAIToolsData = [
+            { id: 1, title: 'Gemini', description: 'A powerful AI model for text, images, and code.', image: 'https://placehold.co/400x250/F3E8FF/5B21B6?text=Gemini', link: '#', type: 'text', featured: true },
+            { id: 2, title: 'DALL-E', description: 'Generate high-quality images from text descriptions.', image: 'https://placehold.co/400x250/FEE2E2/B91C1C?text=DALL-E', link: '#', type: 'image', featured: false },
+            { id: 3, title: 'Midjourney', description: 'An independent research lab that explores new mediums of thought and expands the human imagination.', image: 'https://placehold.co/400x250/FEF2F2/F97316?text=Midjourney', link: '#', type: 'image', featured: false },
+            { id: 4, title: 'ChatGPT', description: 'An AI-powered chatbot that can answer questions, write stories, and more.', image: 'https://placehold.co/400x250/ECFDF5/059669?text=ChatGPT', link: '#', type: 'text', featured: true },
+        ];
+
+        const mockArticlesData = [
+            { id: 1, title: 'The Future of No-Code Development', description: 'Explore how no-code platforms are empowering a new generation of creators.', image: 'https://placehold.co/400x250/D1D5DB/1F2937?text=No-Code+Article', link: '#', date: '2023-10-27' },
+            { id: 2, title: 'AI in the Modern Developer\'s Workflow', description: 'How AI tools are changing the way we write, debug, and deploy software.', image: 'https://placehold.co/400x250/D1FAE5/065F46?text=AI+Article', link: '#', date: '2023-10-25' },
+            { id: 3, title: '5 Essential SQL Commands for Data Analysts', description: 'A quick guide to the most important SQL queries for anyone working with data.', image: 'https://placehold.co/400x250/DBEAFE/1E40AF?text=SQL+Article', link: '#', date: '2023-10-20' },
+        ];
         
-        // --- DATA FETCHING FUNCTIONS ---
-        // These functions fetch data from JSON files.
-        const fetchData = async (url) => {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                return await response.json();
-            } catch (error) {
-                console.error(`Could not fetch data from ${url}:`, error);
-                return [];
-            }
-        };
+        let allAIToolsData = mockAIToolsData; // Store all AI tools for filtering
 
-        const loadContent = async () => {
-            // Fetch all data from the JSON files
-            const [coursesData, aiToolsData, articlesData, questionsData] = await Promise.all([
-                fetchData('courses.json'),
-                fetchData('ai-tools.json'),
-                fetchData('articles.json'),
-                fetchData('questions.json')
-            ]);
-            
-            // Render the content on the page
-            renderCourses(coursesData);
-            renderAITools(aiToolsData);
-            setupAIToolFiltering(aiToolsData);
-            renderArticles(articlesData);
-            renderQuiz(questionsData);
-        };
+        // --- THEME MANAGEMENT ---
+        function initializeTheme() {
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            document.documentElement.classList.add(currentTheme === 'dark' ? 'dark' : 'light');
+            document.getElementById('themeIcon').textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
 
-        // --- RENDERING FUNCTIONS ---
-        // Functions to generate HTML for different sections
-        const renderCourses = (courses) => {
-            const container = document.getElementById('coursesGrid');
-            if (!container) return;
-            container.innerHTML = courses.map(course => `
-                <div class="card animate-in">
-                    <span class="card-icon">📚</span>
-                    <h3 class="card-title">${course.title}</h3>
-                    <p class="card-description">${course.description}</p>
-                    <div class="card-meta">
-                        <span class="badge badge-category">Level: ${course.level}</span>
-                        <span class="badge badge-category">${course.lessons} Lessons</span>
-                    </div>
-                </div>
-            `).join('');
-        };
-
-        const renderAITools = (tools) => {
-            const container = document.getElementById('aiToolsGrid');
-            if (!container) return;
-            container.innerHTML = tools.map(tool => `
-                <a href="${tool.link}" target="_blank" class="card animate-in" style="display:block;">
-                    <div class="card-header">
-                        <h3 class="card-title">${tool.name}</h3>
-                        <span class="badge badge-${tool.pricing}">${tool.pricing}</span>
-                    </div>
-                    <p class="card-description">${tool.description}</p>
-                    <div class="card-meta">
-                        ${tool.categories.map(cat => `<span class="badge badge-category">${cat}</span>`).join('')}
-                    </div>
-                </a>
-            `).join('');
-        };
-        
-        const renderArticles = (articles) => {
-            const container = document.getElementById('articlesGrid');
-            if (!container) return;
-            container.innerHTML = articles.map(article => `
-                <div class="card article-card animate-in">
-                    <p class="article-meta">${article.date} • ${article.readTime}</p>
-                    <h3 class="article-title">${article.title}</h3>
-                    <p class="article-excerpt">${article.excerpt}</p>
-                    <a href="${article.link}" target="_blank" class="read-more">
-                        Read more 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
-            `).join('');
-        };
-
-        const renderQuiz = (questions) => {
-            const container = document.getElementById('quiz-container');
-            if (!container) return;
-            questions.forEach((q, index) => {
-                const questionDiv = document.createElement('div');
-                questionDiv.className = "card";
-                questionDiv.innerHTML = `
-                    <h3 class="card-title">Question ${q.id}:</h3>
-                    <p class="card-description">${q.text}</p>
-                    <textarea class="w-full p-3 border border-border rounded-lg bg-bg-secondary text-primary-dark font-mono transition-colors focus:outline-none focus:border-primary" rows="4" placeholder="Write your SQL query here..."></textarea>
-                    <div class="flex items-center gap-2 mt-4">
-                        <button class="btn btn-primary check-answer-btn">Check Answer</button>
-                    </div>
-                    <div class="quiz-result mt-4 p-3 rounded-lg hidden"></div>
-                `;
-                container.appendChild(questionDiv);
-
-                const button = questionDiv.querySelector('.check-answer-btn');
-                const textarea = questionDiv.querySelector('textarea');
-                const resultDiv = questionDiv.querySelector('.quiz-result');
-
-                button.addEventListener('click', () => {
-                    const userAnswer = textarea.value.trim().toLowerCase().replace(/\s+/g, ' ');
-                    const correctAnswer = q.correctAnswer.trim().toLowerCase().replace(/\s+/g, ' ');
-                    
-                    if (userAnswer === correctAnswer) {
-                        resultDiv.textContent = 'Correct! Great job!';
-                        resultDiv.classList.remove('hidden');
-                        resultDiv.style.backgroundColor = 'var(--accent)';
-                        resultDiv.style.color = 'white';
-                    } else {
-                        resultDiv.textContent = 'Incorrect. Please try again.';
-                        resultDiv.classList.remove('hidden');
-                        resultDiv.style.backgroundColor = 'var(--danger)';
-                        resultDiv.style.color = 'white';
-                    }
-                });
-            });
-        };
-
-        // --- FILTERING LOGIC ---
-        const setupAIToolFiltering = (allTools) => {
-            const tabs = document.querySelectorAll('.filter-tab');
-            const container = document.getElementById('aiToolsGrid');
-            const loadMoreBtn = document.getElementById('load-more-btn');
-            
-            let currentFilter = 'all';
-            let visibleTools = 6;
-
-            const filterAndRender = () => {
-                const filteredTools = currentFilter === 'all'
-                    ? allTools
-                    : allTools.filter(tool => 
-                        tool.categories.some(cat => cat.toLowerCase() === currentFilter) || tool.pricing === currentFilter
-                      );
-                
-                const toolsToShow = filteredTools.slice(0, visibleTools);
-                renderAITools(toolsToShow);
-                
-                if (visibleTools >= filteredTools.length) {
-                    loadMoreBtn.style.display = 'none';
-                } else {
-                    loadMoreBtn.style.display = 'inline-block';
-                }
-            };
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    currentFilter = tab.dataset.filter;
-                    visibleTools = 6; // Reset visibility on filter change
-                    filterAndRender();
-                });
-            });
-
-            loadMoreBtn.addEventListener('click', () => {
-                visibleTools += 6; // Load 6 more tools
-                filterAndRender();
-            });
-
-            // Initial render
-            filterAndRender();
-        };
-
-        // --- THEME TOGGLE LOGIC ---
-        const toggleTheme = () => {
+        function toggleTheme() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', newTheme);
+            document.documentElement.classList.remove(currentTheme);
+            document.documentElement.classList.add(newTheme);
             localStorage.setItem('theme', newTheme);
             document.getElementById('themeIcon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // --- CONTENT RENDERING FUNCTIONS ---
+        function renderCourses(courses) {
+            const container = document.getElementById('courses-container');
+            container.innerHTML = courses.map(course => `
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <img src="${course.image}" alt="${course.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-400">${course.tag}</span>
+                        <h3 class="text-xl font-semibold mt-2">${course.title}</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2">${course.description}</p>
+                        <a href="${course.link}" class="inline-block mt-4 text-indigo-600 dark:text-indigo-400 font-medium hover:underline">Start Course &rarr;</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderAITools(tools) {
+            const container = document.getElementById('aitools-container');
+            container.innerHTML = tools.map(tool => `
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <img src="${tool.image}" alt="${tool.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold uppercase tracking-wide text-purple-600 dark:text-purple-400">${tool.type}</span>
+                        <h3 class="text-xl font-semibold mt-2">${tool.title}</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2">${tool.description}</p>
+                        <a href="${tool.link}" class="inline-block mt-4 text-purple-600 dark:text-purple-400 font-medium hover:underline">Learn More &rarr;</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderArticles(articles) {
+            const container = document.getElementById('articles-container');
+            container.innerHTML = articles.map(article => `
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">${article.date}</p>
+                        <h3 class="text-xl font-semibold mt-2">${article.title}</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2">${article.description}</p>
+                        <a href="${article.link}" class="inline-block mt-4 text-gray-600 dark:text-gray-300 font-medium hover:underline">Read Article &rarr;</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- FETCH & LOAD CONTENT ---
+        async function loadContent() {
+            try {
+                // In a real-world scenario, uncomment the lines below to fetch data from your JSON files
+                // const courses = await fetch(coursesDataUrl).then(res => res.json());
+                // const aiTools = await fetch(aiToolsDataUrl).then(res => res.json());
+                // const articles = await fetch(articlesDataUrl).then(res => res.json());
+                
+                // For this example, we'll use mock data
+                const courses = mockCoursesData;
+                allAIToolsData = mockAIToolsData; // Store all tools for filtering
+                const articles = mockArticlesData;
+
+                renderCourses(courses);
+                renderAITools(allAIToolsData.filter(tool => tool.featured)); // Render featured tools initially
+                renderArticles(articles);
+            } catch (error) {
+                console.error('Failed to load content:', error);
+                // Fallback for users, can display a message
+                const fallbackMessage = '<p class="text-center text-red-500 col-span-3">Could not load content. Please check back for the latest updates.</p>';
+                document.getElementById('courses-container').innerHTML = fallbackMessage;
+                document.getElementById('aitools-container').innerHTML = fallbackMessage;
+                document.getElementById('articles-container').innerHTML = fallbackMessage;
+            }
+        }
+
+        // --- CHAT FUNCTIONALITY ---
+        function askQuestion() {
+            const input = document.getElementById('questionInput');
+            const chatbox = document.getElementById('chatbox');
+            const userQuestion = input.value.trim();
+
+            if (userQuestion) {
+                // Append user message to chatbox
+                chatbox.innerHTML += `<p class="text-indigo-600 dark:text-indigo-400 font-semibold">You: ${userQuestion}</p>`;
+                
+                // Placeholder for AI response
+                // This is where you would integrate the Gemini API
+                // For now, we'll simulate a simple bot response
+                setTimeout(() => {
+                    chatbox.innerHTML += `<p class="text-gray-700 dark:text-gray-300">Anupath AI: Thank you for your question! We are currently working on our interactive chat feature. Stay tuned!</p>`;
+                    chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll to the latest message
+                }, 1000);
+                
+                input.value = '';
+            }
+        }
+
+        // --- FILTERING AI TOOLS ---
+        function filterTools(filterType) {
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-indigo-500', 'text-white');
+                tab.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-800', 'dark:text-gray-200');
+            });
+
+            const activeTab = document.querySelector(`[data-filter="${filterType}"]`);
+            activeTab.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-800', 'dark:text-gray-200');
+            activeTab.classList.add('bg-indigo-500', 'text-white');
+
+            let filteredTools = [];
+            if (filterType === 'featured') {
+                filteredTools = allAIToolsData.filter(tool => tool.featured);
+            } else if (filterType === 'free') {
+                // Assuming a 'free' property. For this example, let's just filter by a mock property
+                filteredTools = allAIToolsData.filter(tool => tool.link.includes('free')); // A simple mock filter
+            } else if (filterType === 'premium') {
+                filteredTools = allAIToolsData.filter(tool => !tool.link.includes('free')); // A simple mock filter
+            }
+            renderAITools(filteredTools);
+        }
+
+        // --- SCROLL TO TOP FUNCTIONALITY ---
+        window.onscroll = function() {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
         };
 
-        const initializeTheme = () => {
-            const savedTheme = localStorage.getItem('theme');
-            const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', initialTheme);
-            document.getElementById('themeIcon').textContent = initialTheme === 'dark' ? '☀️' : '🌙';
-        };
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
 
         // --- INITIALIZATION ---
         document.addEventListener('DOMContentLoaded', () => {
@@ -1032,27 +319,25 @@
             loadContent();
             document.getElementById('currentYear').textContent = new Date().getFullYear();
             
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+            // Event listeners
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            document.getElementById('sendChatButton').addEventListener('click', askQuestion);
+            document.getElementById('questionInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    askQuestion();
+                }
+            });
+            document.getElementById('scrollToTopBtn').addEventListener('click', scrollToTop);
+            
+            // Filter tabs event listeners
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    filterTools(this.dataset.filter);
                 });
             });
 
-            // Chat input event listener for "Send" button
-            document.getElementById('sendChatButton').addEventListener('click', () => {
-                // This is a placeholder for future AI chat functionality
-                // You would implement the Gemini API call here.
-                const input = document.getElementById('questionInput');
-                if (input.value.trim() !== "") {
-                    // Placeholder for now
-                    console.log(`User asked: ${input.value}`);
-                    input.value = "";
-                }
-            });
+            // Set the initial active filter tab
+            document.querySelector('[data-filter="featured"]').click();
         });
     </script>
 </body>
